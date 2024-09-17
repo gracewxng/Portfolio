@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import Image from "next/image"; // Import the Image component
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -23,6 +24,17 @@ export default function Home() {
           ))}
         </ul>
       </nav>
+
+      <div className="relative z-10 mb-6">
+        <Image
+          src="/headshot.jpg"
+          alt="Grace Wang Headshot"
+          width={150}
+          height={150}
+          className="rounded-full"
+        />
+      </div>
+
       <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-left duration-20" />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in duration-20"
