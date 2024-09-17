@@ -17,6 +17,11 @@ const personalProjects = [
     description: "A dynamic task management system built using JavaScript, HTML, and CSS",
     date: "2024-09-10",
     href: "https://aimassist.vercel.app/",
+    _id: "aimassist",
+    _raw: {},
+    type: "Project",
+    body: "AimAssist project description",
+    path: "/projects/aimassist",
   },
   {
     slug: "sleepmetrix",
@@ -24,6 +29,11 @@ const personalProjects = [
     description: "A sleep-tracking desktop application created using Java",
     date: "2024-02-14",
     href: "https://github.com/gracewxng/SleepMetrix",
+    _id: "sleepmetrix",
+    _raw: {},
+    type: "Project",
+    body: "SleepMetrix project description",
+    path: "/projects/sleepmetrix",
   },
   {
     slug: "fitsphere",
@@ -31,6 +41,11 @@ const personalProjects = [
     description: "A beginner-friendly exercise website developed using React, HTML, CSS, and JavaScript",
     date: "2024-03-23",
     href: "https://github.com/gracewxng/FitSphere",
+    _id: "fitsphere",
+    _raw: {},
+    type: "Project",
+    body: "FitSphere project description",
+    path: "/projects/fitsphere",
   },
 ];
 
