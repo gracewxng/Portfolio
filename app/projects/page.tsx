@@ -22,7 +22,7 @@ const personalProjects = [
       sourceFilePath: "projects/aimassist.md",
       sourceFileName: "aimassist.md",
       sourceFileDir: "projects",
-      contentType: "markdown",
+      contentType: "markdown", // This is likely the correct value, adjust based on your actual content type
       flattenedPath: "projects/aimassist",
     },
     type: "Project",
@@ -40,7 +40,7 @@ const personalProjects = [
       sourceFilePath: "projects/sleepmetrix.md",
       sourceFileName: "sleepmetrix.md",
       sourceFileDir: "projects",
-      contentType: "markdown",
+      contentType: "markdown", // Adjust this based on your actual content type
       flattenedPath: "projects/sleepmetrix",
     },
     type: "Project",
@@ -58,7 +58,7 @@ const personalProjects = [
       sourceFilePath: "projects/fitsphere.md",
       sourceFileName: "fitsphere.md",
       sourceFileDir: "projects",
-      contentType: "markdown",
+      contentType: "markdown", // Adjust this based on your actual content type
       flattenedPath: "projects/fitsphere",
     },
     type: "Project",
