@@ -26,13 +26,15 @@ export default function Home() {
       </nav>
 
       <div className="relative z-10 mb-6 animate-fade-in duration-20">
-        <Image
-          src="/headshot.jpg"
-          alt="Grace Wang Headshot"
-          width={150}
-          height={100}
-          className="circle"
-        />
+        <div className="w-36 h-36 rounded-full overflow-hidden">
+          <Image
+            src="/headshot.jpg"
+            alt="Grace Wang Headshot"
+            width={150}
+            height={150}
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-left duration-20" />
