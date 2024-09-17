@@ -34,16 +34,8 @@ export default function Home() {
 
       <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-right" />
       <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-gray-800">
-          I'm building{" "}
-          <Link
-            target="_blank"
-            href="https://unkey.dev"
-            className="underline duration-500 hover:text-gray-600"
-          >
-            unkey.dev
-          </Link>{" "}
-          to solve API authentication and authorization for developers.
+        <h2 className="text-sm text-gray-1000">
+          Second Year Business and Computer Science Student
         </h2>
       </div>
     </div>
