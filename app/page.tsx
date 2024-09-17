@@ -31,7 +31,7 @@ export default function Home() {
           alt="Grace Wang Headshot"
           width={150}
           height={100}
-          className="rounded-full"
+          className="circle"
         />
       </div>
 
