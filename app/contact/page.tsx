@@ -9,7 +9,7 @@ const socials = [
 		icon: <Mail size={20} />,
 		href: "mailto:wanggrace730@gmail.com",
 		label: "Email",
-		handle: "Let's Chat",
+		handle: "Contact Me",
 	},
 	{
 		icon: <Github size={20} />,
