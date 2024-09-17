@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
-import Image from "next/image";
+import Image from "next/image"; // Import the Image component
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -44,4 +44,12 @@ export default function Home() {
         Grace Wang
       </h1>
 
-      <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block
+      <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-right duration-20" />
+      <div className="my-16 text-center animate-fade-in duration-20">
+        <h2 className="text-lg md:text-xl text-gray-400">
+          Second Year Business and Computer Science
+        </h2>
+      </div>
+    </div>
+  );
+}
