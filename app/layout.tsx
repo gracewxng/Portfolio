@@ -6,16 +6,15 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "Grace Wang",
+    template: "%s | Grace Wang",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Second Year Business and Computer Science",
   openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+    title: "Grace Wang",
+    description: "Second Year Business and Computer Science",
     url: "https://chronark.com",
-    siteName: "chronark.com",
+    siteName: "Grace Wang",
     images: [
       {
         url: "https://chronark.com/og.png",
@@ -38,13 +37,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "Grace Wang",
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/logo.png",
   },
 };
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -63,11 +63,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
+        <link rel="icon" href="/favicon.png" />
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
+        className={`bg-black ${
+          process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        }`}
       >
         {children}
       </body>

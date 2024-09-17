@@ -35,7 +35,7 @@ export default function Home() {
       <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-right duration-500" />
       <div className="my-16 text-center animate-fade-in duration-500">
         <h2 className="text-lg md:text-xl text-gray-400">
-          Second Year Business and Computer Science Student
+          Second Year Business and Computer Science
         </h2>
       </div>
     </div>
