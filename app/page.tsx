@@ -28,13 +28,13 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <h1 className="py-3.5 px-0.5 z-10 text-4xl text-gray-200 duration-300 cursor-default font-display sm:text-6xl md:text-9xl whitespace-nowrap">
+      <h1 className="py-3.5 px-0.5 z-10 text-4xl text-white-200 duration-300 cursor-default font-display sm:text-6xl md:text-9xl whitespace-nowrap">
         Grace Wang
       </h1>
 
       <div className="hidden w-screen h-px bg-gradient-to-r from-pink-100/0 via-gray-50/50 to-pink-100/0 md:block animate-fade-right" />
       <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm text-gray-400">
+        <h2 className="text-lg md:text-xl text-gray-400">
           Second Year Business and Computer Science Student
         </h2>
       </div>
