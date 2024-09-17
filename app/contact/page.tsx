@@ -1,5 +1,5 @@
 "use client";
-import { Github, Mail} from "lucide-react";
+import { Github, Mail, LinkedIn} from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
@@ -9,13 +9,19 @@ const socials = [
 		icon: <Mail size={20} />,
 		href: "mailto:wanggrace730@gmail.com",
 		label: "Email",
-		handle: "wanggrace730@gmail.com",
+		handle: "Let's Chat",
 	},
 	{
 		icon: <Github size={20} />,
 		href: "https://github.com/gracewxng",
 		label: "Github",
-		handle: "Check Out my Github!",
+		handle: "My Github",
+	},
+	{
+		icon: <LinkedIn size={20} />,
+		href: "https://www.linkedin.com/in/grace-wang-a338ab217/",
+		label: "LinkedIn",
+		handle: "Let's Connect",
 	},
 ];
 
