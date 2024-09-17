@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Grace Wang",
     images: [
       {
-        url: "https://gracewang.vercel.app/png",
+        url: "https://gracewang.vercel.app/preview.png",
         width: 1920,
         height: 1080,
       },
