@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Grace Wang",
     description: "Second Year Business and Computer Science",
-    url: "https://chronark.com",
+    url: "https://gracewang.vercel.app",
     siteName: "Grace Wang",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://gracewang.vercel.app/png",
         width: 1920,
         height: 1080,
       },
