@@ -16,7 +16,7 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm duration-500 text-gray-400 hover:text-gray-300"
+              className="text-lg md:text-xl duration-500 text-gray-400 hover:text-gray-300"
             >
               {item.name}
             </Link>
