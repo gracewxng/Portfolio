@@ -32,6 +32,13 @@ const personalProjects = [
     date: "2024-03-23",
     href: "https://github.com/gracewxng/FitSphere",
   },
+  {
+    slug: "portfolio",
+    title: "Portfolio",
+    description: "A visually appealing website showcasing skills and projects built using Next.js, Tailwind CSS, and Upstash",
+    date: "2024-09-17",
+    href: "https://gracewang.vercel.app/",
+  },
 ];
 
 export default async function ProjectsPage() {
@@ -47,6 +54,7 @@ export default async function ProjectsPage() {
   const featured = personalProjects.find((project) => project.slug === "aimassist")!;
   const top2 = personalProjects.find((project) => project.slug === "sleepmetrix")!;
   const top3 = personalProjects.find((project) => project.slug === "fitsphere")!;
+  const top4 = personalProjects.find((project) => project.slug === "portfolio")!;
   const sorted = personalProjects
     .filter((project) => project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug)
     .sort(
