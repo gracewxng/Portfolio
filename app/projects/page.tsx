@@ -56,7 +56,7 @@ export default async function ProjectsPage() {
   const top3 = personalProjects.find((project) => project.slug === "fitsphere")!;
   const top4 = personalProjects.find((project) => project.slug === "portfolio")!;
   const sorted = personalProjects
-    .filter((project) => project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug && project.slug !== top4.slug)
+    .filter((project) => project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug)
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
@@ -92,7 +92,7 @@ export default async function ProjectsPage() {
                     {Intl.NumberFormat("en-US", { notation: "compact" }).format(views[featured.slug] ?? 0)}
                   </span>
                 </div>
-                <h2 id="featured-post" className="mt-4 text-3xl font-bold text-gray-600 group-hover:text-gray sm:text-4xl font-display">
+                <h2 id="featured-post" className="mt-4 text-3xl font-bold text-gray-600 group-hover:text-white sm:text-4xl font-display">
                   {featured.title}
                 </h2>
                 <p className="mt-4 leading-8 duration-150 text-gray-500 group-hover:text-gray-300">
@@ -108,9 +108,33 @@ export default async function ProjectsPage() {
           </Card>
 
           <div className="flex flex-col w-full gap-8 mx-auto border-t border-gray-300 lg:mx-0 lg:border-t-0 ">
-            {[top2, top3].map((project) => (
+            {[top2, top3, top4].map((project) => (
               <Card key={project.slug}>
-                <Article project={project} views={views[project.slug] ?? 0} />
+                <Link href={project.href}>
+                  <article className="relative w-full h-full p-4 md:p-8">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-xs text-gray-500">
+                        {project.date ? (
+                          <time dateTime={new Date(project.date).toISOString()}>
+                            {Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(project.date))}
+                          </time>
+                        ) : (
+                          <span>SOON</span>
+                        )}
+                      </div>
+                      <span className="flex items-center gap-1 text-xs text-gray-400">
+                        <Eye className="w-4 h-4" />
+                        {Intl.NumberFormat("en-US", { notation: "compact" }).format(views[project.slug] ?? 0)}
+                      </span>
+                    </div>
+                    <h2 className="mt-4 text-3xl font-bold text-gray-600 group-hover:text-white sm:text-4xl font-display">
+                      {project.title}
+                    </h2>
+                    <p className="mt-4 leading-8 duration-150 text-gray-500 group-hover:text-gray-300">
+                      {project.description}
+                    </p>
+                  </article>
+                </Link>
               </Card>
             ))}
           </div>
