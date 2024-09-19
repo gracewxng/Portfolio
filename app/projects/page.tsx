@@ -51,12 +51,10 @@ export default async function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  // Include portfolio project with the other top projects
   const topProjects = personalProjects.filter((project) =>
     ["aimassist", "sleepmetrix", "fitsphere", "portfolio"].includes(project.slug)
   );
 
-  // Sort other projects
   const sorted = personalProjects
     .filter((project) => !topProjects.map((p) => p.slug).includes(project.slug))
     .sort(
@@ -75,7 +73,6 @@ export default async function ProjectsPage() {
         </div>
         <div className="w-full h-px bg-gray-400" />
 
-        {/* Display all top projects together */}
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           {topProjects.map((project) => (
             <Card key={project.slug}>
@@ -113,16 +110,19 @@ export default async function ProjectsPage() {
           ))}
         </div>
 
-        {/* Optional: Other sorted projects */}
-        <div className="hidden w-full h-px md:block bg-gray-400" />
+        {sorted.length > 0 && (
+          <>
+            <div className="hidden w-full h-px md:block bg-gray-400" />
 
-        <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-          {sorted.map((project) => (
-            <Card key={project.slug}>
-              <Article project={project} views={views[project.slug] ?? 0} />
-            </Card>
-          ))}
-        </div>
+            <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
+              {sorted.map((project) => (
+                <Card key={project.slug}>
+                  <Article project={project} views={views[project.slug] ?? 0} />
+                </Card>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
