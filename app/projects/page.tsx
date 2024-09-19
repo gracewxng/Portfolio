@@ -51,17 +51,11 @@ export default async function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  const topProjects = personalProjects.filter((project) =>
-    ["aimassist", "sleepmetrix", "fitsphere", "portfolio"].includes(project.slug)
+  const sorted = personalProjects.sort(
+    (a, b) =>
+      new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+      new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
   );
-
-  const sorted = personalProjects
-    .filter((project) => !topProjects.map((p) => p.slug).includes(project.slug))
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-    );
 
   return (
     <div className="relative pb-16 bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300">
@@ -71,10 +65,9 @@ export default async function ProjectsPage() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-600 sm:text-4xl">Projects</h2>
           <p className="mt-4 text-gray-500">Putting those technical skills to use!</p>
         </div>
-        <div className="w-full h-px bg-gray-400" />
 
-        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-          {topProjects.map((project) => (
+        <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 md:grid-cols-2">
+          {sorted.map((project) => (
             <Card key={project.slug}>
               <Link href={project.href}>
                 <article className="relative w-full h-full p-4 md:p-8">
@@ -109,20 +102,6 @@ export default async function ProjectsPage() {
             </Card>
           ))}
         </div>
-
-        {sorted.length > 0 && (
-          <>
-            <div className="hidden w-full h-px md:block bg-gray-400" />
-
-            <div className="grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3">
-              {sorted.map((project) => (
-                <Card key={project.slug}>
-                  <Article project={project} views={views[project.slug] ?? 0} />
-                </Card>
-              ))}
-            </div>
-          </>
-        )}
       </div>
     </div>
   );
