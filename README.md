@@ -1,4 +1,4 @@
-<img width="1470" alt="image" src="https://github.com/user-attachments/assets/2a58a56c-d50d-40d3-bc6b-e7c0c6f69f68"># Portfolio 🎀
+# Portfolio 🎀
 
 ## Overview
 
