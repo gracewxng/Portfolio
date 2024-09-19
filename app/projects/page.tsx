@@ -56,7 +56,7 @@ export default async function ProjectsPage() {
   const top3 = personalProjects.find((project) => project.slug === "fitsphere")!;
   const top4 = personalProjects.find((project) => project.slug === "portfolio")!;
   const sorted = personalProjects
-    .filter((project) => project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug)
+    .filter((project) => project.slug !== featured.slug && project.slug !== top2.slug && project.slug !== top3.slug && project.slug !== top4.slug)
     .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
@@ -92,7 +92,7 @@ export default async function ProjectsPage() {
                     {Intl.NumberFormat("en-US", { notation: "compact" }).format(views[featured.slug] ?? 0)}
                   </span>
                 </div>
-                <h2 id="featured-post" className="mt-4 text-3xl font-bold text-gray-600 group-hover:text-white sm:text-4xl font-display">
+                <h2 id="featured-post" className="mt-4 text-3xl font-bold text-gray-600 group-hover:text-gray sm:text-4xl font-display">
                   {featured.title}
                 </h2>
                 <p className="mt-4 leading-8 duration-150 text-gray-500 group-hover:text-gray-300">
