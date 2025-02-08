@@ -7,14 +7,42 @@ const experiences = [
   {
     title: "Software Engineer",
     company: "Sustaingineering UBC",
-    date: "Jan 2025 - pResent",
-    description: "Tiny home project!",
+    date: "Jan 2025 - Present",
+    description: "🌱 The tiny home project is kinda cool",
   },
   {
     title: "Software Engineer",
     company: "Ascend UBC",
-    date: "Jan 2025 - Present",
-    description: "Web dev!",
+    date: "Dec 2024 - Present",
+    description: "💻 Website in progress...",
+  },
+
+  {
+    title: "Kitchen Specialist",
+    company: "Gate Gourmet",
+    date: "Aug 2023 - Sep 2023",
+    description: "🌯 Bringing the yum to your tum in flight",
+  },
+
+  {
+    title: "Server",
+    company: "Fusion Sushi",
+    date: "Mar 2023 - Aug 2023",
+    description: "🍣 Let's grab sushi?",
+  },
+
+  {
+    title: "Crew Member",
+    company: "VBurger",
+    date: "Aug 2022 - Sep 2022",
+    description: "🍦 Expert at blending ice cream",
+  },
+
+  {
+    title: "Research Assistant",
+    company: "University of Calgary",
+    date: "Jul 2018 - Mar 2021",
+    description: "🦠 Cancer research is kinda cool",
   },
 ];
 

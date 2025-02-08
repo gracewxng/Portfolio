@@ -45,7 +45,7 @@ export default function Home() {
           <br />
           <br />
           Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or
-          just hanging out with friends and family.
+          just hanging out with friends and family!
           </p>
 
           {/* Get in Touch Button */}
