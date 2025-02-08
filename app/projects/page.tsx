@@ -45,14 +45,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="relative pb-16 bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 min-h-screen">
-      {/* Back Button */}
-      <Link
-        href="/"
-        className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition"
-      >
-        <ArrowLeft className="w-6 h-6" />
-      </Link>
-
       {/* Navigation Bar */}
       <Navigation />
 

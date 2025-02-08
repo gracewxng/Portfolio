@@ -1,11 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import { Navigation } from "../components/nav";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 flex flex-col items-center justify-center text-gray-800 relative">
-      {/* Back Arrow */}
+    {/* Navigation Bar */}
+    <Navigation />
+    
+    {/* Back Arrow */}
       <Link
         href="/"
         className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition"
