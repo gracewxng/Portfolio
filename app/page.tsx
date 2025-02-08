@@ -31,9 +31,9 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center max-w-5xl px-6 space-y-8 md:space-y-0 md:space-x-12">
         {/* Left Side - Name, About Me & Contact Button */}
         <div className="text-center md:text-left max-w-lg">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white-800">
-            Grace Wang
-          </h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white">
+          Grace Wang
+        </h1>
 
           {/* About Me Blurb */}
           <p className="mt-4 text-lg md:text-xl text-gray-600">
