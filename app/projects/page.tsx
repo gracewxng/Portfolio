@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-import { ArrowLeft } from "lucide-react"; // Import the ArrowLeft icon
+import { ArrowLeft } from "lucide-react";
 
 const personalProjects = [
   {
@@ -44,11 +44,11 @@ export default function ProjectsPage() {
   );
 
   return (
-    <div className="relative pb-16 bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300">
+    <div className="relative pb-16 bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 min-h-screen">
       {/* Back Button */}
       <Link
         href="/"
-        className="absolute top-6 left-6 flex items-center text-gray-600 hover:text-pink-600 transition"
+        className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition"
       >
         <ArrowLeft className="w-6 h-6" />
       </Link>
