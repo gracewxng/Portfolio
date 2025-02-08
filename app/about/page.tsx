@@ -8,10 +8,9 @@ export default function About() {
       {/* Back Arrow */}
       <Link
         href="/"
-        className="absolute top-6 left-6 flex items-center text-gray-600 hover:text-pink-600 transition"
+        className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition"
       >
-        <ArrowLeft className="w-5 h-5 mr-2" />
-        Back
+        <ArrowLeft className="w-6 h-6" />
       </Link>
 
       {/* About Section */}
