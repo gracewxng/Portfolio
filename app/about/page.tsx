@@ -20,7 +20,7 @@ export default function About() {
       {/* About Section */}
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl font-bold mb-6 text-pink-600">About Me</h1>
-        <p className="text-lg md:text-xl text-gray-400">
+        <p className="text-lg md:text-xl text-gray-500">
         Hi! My name is Grace and I am a second year Business and Computer Science student at UBC.
         I'm passionate about software engineering, education, healthcare, and building
         meaningful projects that make an impact. I love exploring new technologies and

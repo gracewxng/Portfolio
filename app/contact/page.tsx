@@ -3,6 +3,7 @@ import { Github, Mail, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
+import { ArrowLeft } from "lucide-react";
 
 const socials = [
 	{
@@ -29,6 +30,13 @@ export default function Example() {
 	return (
 		<div className=" bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300">
 			<Navigation />
+			{/* Back Arrow */}
+			<Link
+			href="/"
+			className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition"
+			>
+			<ArrowLeft className="w-6 h-6" />
+			</Link>
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s) => (
