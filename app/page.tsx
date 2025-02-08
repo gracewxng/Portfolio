@@ -28,7 +28,7 @@ export default function Home() {
       <div className="relative z-10 mb-6 animate-fade-in duration-20">
         <div className="w-36 h-36 rounded-full overflow-hidden">
           <Image
-            src="/headshot.jpg"
+            src="/headshot.png"
             alt="Grace Wang Headshot"
             width={150}
             height={150}
