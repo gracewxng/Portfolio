@@ -29,9 +29,9 @@ export default function Home() {
 
       {/* Content Layout */}
       <div className="flex flex-col md:flex-row items-center max-w-5xl px-6 space-y-8 md:space-y-0 md:space-x-12">
-        {/* Left Side - Name & About Me */}
+        {/* Left Side - Name, About Me & Contact Button */}
         <div className="text-center md:text-left max-w-lg">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-800">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white-800">
             Grace Wang
           </h1>
 
@@ -46,6 +46,16 @@ export default function Home() {
           Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or
           just hanging out with friends and family.
           </p>
+
+          {/* Get in Touch Button */}
+          <div className="mt-6">
+            <Link
+              href="/contact"
+              className="px-6 py-3 text-lg font-medium bg-white text-pink-600 rounded-lg shadow-md hover:bg-pink-500 hover:text-white transition duration-300"
+            >
+              Get in Touch!
+            </Link>
+          </div>
         </div>
 
         {/* Right Side - Larger Headshot */}
