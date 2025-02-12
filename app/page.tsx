@@ -32,20 +32,20 @@ export default function Home() {
       <div className="flex flex-col md:flex-row items-center max-w-5xl px-6 space-y-8 md:space-y-0 md:space-x-12">
         {/* Left Side - Name, About Me & Contact Button */}
         <div className="text-center md:text-left max-w-lg">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white">
-          Grace Wang
-        </h1>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white">
+            Grace Wang
+          </h1>
 
           {/* About Me Blurb */}
           <p className="mt-4 text-lg md:text-xl text-gray-600">
-          Hi! My name is Grace and I am a second year Business and Computer Science student at UBC.
-          I'm passionate about software engineering, education, healthcare, and building
-          meaningful projects that make an impact. I love exploring new technologies and
-          combining business knowledge with technical expertise to solve real world problems.
-          <br />
-          <br />
-          Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or
-          just hanging out with friends and family!
+            Hi! My name is Grace and I am a second-year Business and Computer Science student at UBC.
+            I'm passionate about software engineering, education, healthcare, and building
+            meaningful projects that make an impact. I love exploring new technologies and
+            combining business knowledge with technical expertise to solve real-world problems.
+            <br />
+            <br />
+            Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or
+            just hanging out with friends and family!
           </p>
 
           {/* Get in Touch Button */}
@@ -59,8 +59,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side - Larger Headshot */}
-        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg">
+        {/* Right Side - Headshot with White Border */}
+        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white">
           <Image
             src="/headshot.png"
             alt="Grace Wang Headshot"
@@ -68,6 +68,47 @@ export default function Home() {
             height={300}
             className="object-cover"
           />
+        </div>
+      </div>
+
+      {/* Spacing Before Dashboard */}
+      <div className="mt-16"></div>
+
+      {/* Dashboard Section at the Bottom */}
+      <div className="absolute bottom-0 w-full bg-white bg-opacity-50 backdrop-blur-lg py-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 text-center">
+          {/* Technical Skills */}
+          <div className="p-4 bg-white rounded-lg shadow-md">
+            <h2 className="text-lg font-bold text-pink-600">Skills</h2>
+            <p className="text-gray-700">
+            👩🏻‍💻 Programming: Java, C/C++, Python, Racket <br />
+            🛠️ Tools/Environments: Eclipse, IntelliJ, VSCode, Github <br />
+            🧪 Testing: JUnit, GDB. <br />
+            🖥️ Web: React, HTML, CSS, JavaScript, Node.js, JSON
+            </p>
+          </div>
+
+          {/* Hobbies */}
+          <div className="p-4 bg-white rounded-lg shadow-md">
+            <h2 className="text-lg font-bold text-pink-600">Hobbies</h2>
+            <p className="text-gray-700">
+            💃🏻 Dancing <br />
+            ☕️ Cafe Hopping <br />
+            🎬 Video Editing <br />
+            📲 Content Creation <br />
+            </p>
+          </div>
+
+          {/* Currently */}
+          <div className="p-4 bg-white rounded-lg shadow-md">
+            <h2 className="text-lg font-bold text-pink-600">Current Obsessions</h2>
+            <p className="text-gray-700">
+            🍵 Matcha Lattes <br />
+            🌷 Pink Tulips <br />
+            🐰 Cinamoroll <br />
+            🏈 NFL <br />
+            🎥 How I Met Your Mother</p>
+          </div>
         </div>
       </div>
     </div>
