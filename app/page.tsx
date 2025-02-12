@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -60,12 +59,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side - Headshot with Animation */}
-        <motion.div 
-          whileHover={{ scale: 1.1, rotate: 5 }} 
-          transition={{ type: "spring", stiffness: 100 }}
-          className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white"
-        >
+        {/* Right Side - Headshot with White Border */}
+        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white">
           <Image
             src="/headshot.png"
             alt="Grace Wang Headshot"
@@ -73,22 +68,14 @@ export default function Home() {
             height={300}
             className="object-cover"
           />
-        </motion.div>
+        </div>
       </div>
 
-      {/* Dashboard Section Below Content with Animation */}
-      <motion.div 
-        whileHover={{ y: -5, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)" }} 
-        transition={{ duration: 0.3 }}
-        className="w-full bg-white bg-opacity-50 backdrop-blur-lg py-6 mt-16"
-      >
+      {/* Dashboard Section Below Content */}
+      <div className="w-full bg-white bg-opacity-50 backdrop-blur-lg py-6 mt-16">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 text-center">
           {/* Technical Skills */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }} 
-            transition={{ duration: 0.3 }}
-            className="p-4 bg-white rounded-lg shadow-md"
-          >
+          <div className="p-4 bg-white rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-pink-600">Skills</h2>
             <p className="text-gray-700">
             👩🏻‍💻 Programming: Java, C/C++, Python, Racket <br />
@@ -96,14 +83,10 @@ export default function Home() {
             🧪 Testing: JUnit, GDB <br />
             🖥️ Web: React, HTML, CSS, JavaScript, Node.js, JSON
             </p>
-          </motion.div>
+          </div>
 
           {/* Hobbies */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }} 
-            transition={{ duration: 0.3 }}
-            className="p-4 bg-white rounded-lg shadow-md"
-          >
+          <div className="p-4 bg-white rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-pink-600">Hobbies</h2>
             <p className="text-gray-700">
             💃🏻 Dancing <br />
@@ -111,14 +94,10 @@ export default function Home() {
             🎬 Video Editing <br />
             📲 Content Creation <br />
             </p>
-          </motion.div>
+          </div>
 
           {/* Currently */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }} 
-            transition={{ duration: 0.3 }}
-            className="p-4 bg-white rounded-lg shadow-md"
-          >
+          <div className="p-4 bg-white rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-pink-600">Current Obsessions</h2>
             <p className="text-gray-700">
             🍵 Matcha Lattes <br />
@@ -127,9 +106,9 @@ export default function Home() {
             🏈 NFL <br />
             🎥 How I Met Your Mother
             </p>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
