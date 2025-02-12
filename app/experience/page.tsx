@@ -16,28 +16,24 @@ const experiences = [
     date: "Dec 2024 - Present",
     description: "💻 Website in progress...",
   },
-
   {
     title: "Kitchen Specialist",
     company: "Gate Gourmet",
     date: "Aug 2023 - Sep 2023",
     description: "🌯 Bringing the yum to your tum in flight",
   },
-
   {
     title: "Server",
     company: "Fusion Sushi",
     date: "Mar 2023 - Aug 2023",
     description: "🍣 Let's grab sushi?",
   },
-
   {
     title: "Crew Member",
     company: "VBurger",
     date: "Aug 2022 - Sep 2022",
     description: "🍦 Expert at blending ice cream",
   },
-
   {
     title: "Research Assistant",
     company: "University of Calgary",
@@ -48,9 +44,9 @@ const experiences = [
 
 export default function Experiences() {
   return (
-    <div className="min-h-screen bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 flex flex-col items-center justify-center text-gray-800 relative">     
-    {/* Navigation Bar */}
-    <Navigation />
+    <div className="min-h-screen bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 flex flex-col items-center text-gray-800 relative pb-20">     
+      {/* Navigation Bar */}
+      <Navigation />
 
       {/* Back Button */}
       <Link href="/" className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition">
@@ -58,9 +54,9 @@ export default function Experiences() {
       </Link>
 
       {/* Page Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-pink-600">My Experiences</h1>
-        <p className="text-lg text-gray-600 mt-2">A quick timeline!</p>
+      <div className="text-center max-w-lg mt-16">
+        <h1 className="text-l sm:text-6xl md:text-l font-bold text-white">My Experiences</h1>
+        <p className="text-lg md:text-xl text-gray-600 mt-2">A quick timeline!</p>
       </div>
 
       {/* Timeline */}
