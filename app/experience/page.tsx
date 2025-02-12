@@ -56,7 +56,7 @@ export default function Experiences() {
       {/* Page Header */}
       <div className="text-center max-w-lg mt-16">
         <h1 className="text-l sm:text-6xl md:text-l font-bold text-white">My Experiences</h1>
-        <p className="text-lg md:text-xl text-gray-600 mt-2">A quick timeline!</p>
+        <p className="text-lg md:text-xl text-pink-600 mt-2">A quick timeline!</p>
       </div>
 
       {/* Timeline */}

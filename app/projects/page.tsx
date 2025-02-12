@@ -65,8 +65,8 @@ export default function ProjectsPage() {
 
       {/* Page Header */}
       <div className="text-center max-w-lg mt-16">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white">My Projects</h1>
-        <p className="text-lg md:text-xl text-gray-600 mt-2">Putting those technical skills to use!</p>
+        <h1 className="text-l sm:text-6xl md:text-l font-bold text-white">My Projects</h1>
+        <p className="text-lg md:text-xl text-pink-600 mt-2">Putting those technical skills to use!</p>
       </div>
 
       {/* Projects Grid */}

@@ -19,15 +19,16 @@ export default function About() {
       {/* About Me Section */}
       <div className="text-center max-w-lg mt-16">
         <h1 className="text-l sm:text-6xl md:text-l font-bold text-white">All About Me!</h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
+        <p className="text-lg md:text-xl text-pink-600 mt-2">Who I am, and what I like to do!</p>
+        <p className="mt-4 text-lg md:text-l text-gray-600 leading-relaxed">
           Hi! My name is Grace and I am a second-year Business and Computer Science student at UBC.
           I'm passionate about software engineering, education, healthcare, and building meaningful
           projects that make an impact. I love exploring new technologies and combining business knowledge
           with technical expertise to solve real-world problems.
         </p>
-        <p className="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
-          Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or just
-          hanging out with friends and family!
+        <p className="mt-4 text-lg md:text-l text-gray-600 leading-relaxed">
+        Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, editing a video, or
+        just hanging out with friends and family.
         </p>
       </div>
 

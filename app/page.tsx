@@ -36,16 +36,18 @@ export default function Home() {
             Grace Wang
           </h1>
 
+          <p className="text-lg md:text-xl text-pink-600 mt-2">Business + Computer Science @ UBC</p>
+
           {/* About Me Blurb */}
-          <p className="mt-4 text-lg md:text-xl text-gray-600">
+          <p className="mt-4 text-lg md:text-l text-gray-600">
             Hi! My name is Grace and I am a second-year Business and Computer Science student at UBC.
             I'm passionate about software engineering, education, healthcare, and building
             meaningful projects that make an impact. I love exploring new technologies and
             combining business knowledge with technical expertise to solve real-world problems.
             <br />
             <br />
-            Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, or
-            just hanging out with friends and family!
+            Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, editing a video, or
+            just hanging out with friends and family.
           </p>
 
           {/* Get in Touch Button */}
