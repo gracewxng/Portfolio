@@ -31,7 +31,7 @@ const personalProjects = [
     title: "PupTalk",
     description: "OpenAI API | JavaScript | HTML | CSS",
     date: "2025-02-10",
-    href: "https://puptalk.vercel.app/",
+    href: "https://github.com/marinajnyu/bucs-hackathon-2025",
   },
   {
     slug: "portfolio",
