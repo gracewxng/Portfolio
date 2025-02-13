@@ -7,6 +7,12 @@ This is a website I developed using **Next.js, Tailwind CSS, and Upstash** to sh
 ### Home Page
 ![Homepage](public/homepage.png)
 
+### About Page
+![Homepage](public/aboutpage.png)
+
+### Exxperiences Page
+![Homepage](public/experiencepage.png)
+
 ### Project Page
 ![Projects](public/projectpage.png)
 
