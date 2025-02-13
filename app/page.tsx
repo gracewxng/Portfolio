@@ -80,10 +80,10 @@ export default function Home() {
           <div className="p-4 bg-white rounded-lg shadow-md">
             <h2 className="text-lg font-bold text-pink-600">Skills</h2>
             <p className="text-gray-700">
-            👩🏻‍💻 Programming: Java, C/C++, Python, Racket <br />
-            🛠️ Tools/Environments: Eclipse, IntelliJ, VSCode, Github <br />
+            👩🏻‍💻 Programming: Java, C/C++, Python, Racket, SQL <br />
+            🛠️ Tools/Environments: Figma, IntelliJ, VSCode, Github <br />
             🧪 Testing: JUnit, GDB <br />
-            🖥️ Web: React, HTML, CSS, JavaScript, Node.js, JSON
+            🖥️ Web: React, HTML, CSS, JavaScript, TypeScript, Node.js, Next.js, JSON
             </p>
           </div>
 
