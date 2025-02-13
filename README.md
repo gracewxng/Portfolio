@@ -17,4 +17,4 @@ This is a website I developed using **Next.js, Tailwind CSS, and Upstash** to sh
 ![Projects](public/projectpage.png)
 
 ### Contact Page
-![Contact](public/contactpage.png)
+![Contact](public/contactspage.png)
