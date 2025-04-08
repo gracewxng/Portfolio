@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
 import Image from "next/image";
+import { ChatBot } from "./components/chatBot";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -111,6 +112,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ChatBot />
     </div>
   );
 }
