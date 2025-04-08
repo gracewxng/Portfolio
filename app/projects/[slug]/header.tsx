@@ -37,6 +37,15 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 		);
 
 		observer.observe(ref.current);
+		
+		fetch("/api/incr", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ slug: project.title }),
+		});
+		
 		return () => observer.disconnect();
 	}, []);
 
