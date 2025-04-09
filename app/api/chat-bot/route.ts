@@ -20,6 +20,7 @@ Recent Projects:
 - Pup Talk: A Chrome extension that uses the OpenAI API to rephrase web content into various tones, improving accessibility and personalization.
 - FitSphere: A fitness web app using React and JavaScript, featuring interactive muscle diagrams and personalized guidance.
 - SleepMetrix: A desktop app built in Java that tracks and analyzes sleep patterns using Java Swing UI and statistical tools.
+- AimAssist: A web app that allows users to imput information into a todo list.
 - Ascend UBC Website: Grace helped build this React/Next.js site to streamline club promotions, logistics, and event management.
 - UBC Sustaingineering: Built a TypeScript/Next.js dashboard with real-time sensor data visualized from Raspberry Pi using Python, NumPy, and SQL.
 

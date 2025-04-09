@@ -65,7 +65,7 @@ export default function Home() {
         </div>
 
         {/* Right Side - Headshot with White Border */}
-        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white">
+        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-lg border-4 border-white transform transition duration-500 hover:scale-105 hover:shadow-xl">
           <Image
             src="/headshot.png"
             alt="Grace Wang Headshot"
@@ -80,7 +80,7 @@ export default function Home() {
       <div className="w-full bg-white bg-opacity-50 backdrop-blur-lg py-6 mt-16">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 text-center">
           {/* Technical Skills */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
+          <div className="p-4 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-pink-600">Skills</h2>
             <p className="text-gray-700">
             👩🏻‍💻 Programming: Java, C/C++, Python, Racket, SQL <br />
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
 
           {/* Hobbies */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
+          <div className="p-4 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-pink-600">Hobbies</h2>
             <p className="text-gray-700">
             💃🏻 Dancing <br />
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
 
           {/* Currently */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
+          <div className="p-4 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-pink-600">Current Obsessions</h2>
             <p className="text-gray-700">
             🍵 Matcha Lattes <br />

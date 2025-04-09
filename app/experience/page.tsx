@@ -14,7 +14,7 @@ const experiences = [
     title: "Software Engineer",
     company: "Ascend UBC",
     date: "Dec 2024 - Present",
-    description: "💻 Website in progress...",
+    description: "💻 Check out our website!",
   },
   {
     title: "Kitchen Specialist",
@@ -62,12 +62,15 @@ export default function Experiences() {
       {/* Timeline */}
       <div className="mt-10 space-y-8 w-full max-w-3xl">
         {experiences.map((exp, index) => (
-          <div key={index} className="relative pl-8 border-l-4 border-pink-600">
+          <div
+            key={index}
+            className="relative pl-8 border-l-4 border-pink-600 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg hover:bg-white/40 rounded-md group"
+          >
             {/* Timeline Marker */}
-            <div className="absolute left-[-10px] w-4 h-4 bg-pink-600 rounded-full" />
+            <div className="absolute left-[-10px] w-4 h-4 bg-pink-600 rounded-full animate-pulse" />
 
             {/* Experience Details */}
-            <div className="ml-4">
+            <div className="ml-4 transition-opacity duration-300 group-hover:opacity-100">
               <h2 className="text-xl font-semibold text-gray-800">{exp.title}</h2>
               <h3 className="text-md font-medium text-gray-500">{exp.company}</h3>
               <p className="text-sm text-gray-600 italic">{exp.date}</p>
