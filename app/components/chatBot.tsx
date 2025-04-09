@@ -1,9 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, Maximize2, Minimize2 } from "lucide-react";
 
 export function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,17 +36,26 @@ export function ChatBot() {
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {isOpen ? (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+        <div className={`bg-white border border-gray-200 flex flex-col rounded-lg shadow-lg p-4 transition-all duration-300 ${isExpanded ? "w-[90vw] h-[80vh] max-w-4xl" : "w-full max-w-md"}`}>
           {/* Header */}
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-pink-500">Grace's AI Assistant</span>
-            <button onClick={() => setIsOpen(false)}>
-              <X className="text-gray-400 hover:text-pink-600" size={20} />
-            </button>
+            <div className="flex items-center space-x-2">
+              <button onClick={() => setIsExpanded(!isExpanded)}>
+                {isExpanded ? (
+                  <Minimize2 className="text-gray-400 hover:text-pink-600" size={20} />
+                ) : (
+                  <Maximize2 className="text-gray-400 hover:text-pink-600" size={20} />
+                )}
+              </button>
+              <button onClick={() => setIsOpen(false)}>
+                <X className="text-gray-400 hover:text-pink-600" size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Chat content */}
-          <div className="h-48 overflow-y-auto mb-2 text-sm">
+          <div className="flex-grow overflow-y-auto mb-2 text-sm">
             {messages.map((m, i) => (
               <div key={i} className={`mb-2 ${m.role === "user" ? "text-right" : "text-left text-pink-600"}`}>
                 <p>{m.content}</p>
