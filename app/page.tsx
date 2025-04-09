@@ -49,6 +49,9 @@ export default function Home() {
             <br />
             Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, editing a video, or
             just hanging out with friends and family.
+            <br />
+            <br />
+            Learn more about me and my projects with the Grace's AI in the bottom right corner!
           </p>
 
           {/* Get in Touch Button */}
