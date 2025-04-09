@@ -36,7 +36,7 @@ export function ChatBot() {
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {isOpen ? (
-        <div className={`bg-white border border-gray-200 flex flex-col rounded-lg shadow-lg p-4 transition-all duration-300 ${isExpanded ? "w-[90vw] h-[80vh] max-w-4xl" : "w-full max-w-md"}`}>
+        <div className={`bg-white border border-gray-200 flex flex-col rounded-lg shadow-lg p-4 transition-all duration-300 ${isExpanded ? "w-[90vw] h-[80vh] max-w-4xl" : "w-[400px] h-[300px] max-w-lg"}`}>
           {/* Header */}
           <div className="flex justify-between items-center mb-2">
             <span className="font-bold text-pink-500">Grace's AI Assistant</span>
