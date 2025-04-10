@@ -117,7 +117,7 @@ export default function Home() {
               {
                 title: "PupTalk",
                 description: "OpenAI API, JavaScript, HTML, CSS<br /><br />Built a Chrome extension that transforms webpage text into different tones in real-time to improve accessibility and engagement.",
-                href: "https://github.com/marinajnyu/bucs-hackathon-2025",
+                href: "https://github.com/gracewxng/PupTalk",
                 date: "2025-02-10",
               },
               {
