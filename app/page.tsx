@@ -92,7 +92,7 @@ export default function Home() {
           ].map((exp, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:bg-pink-50 transition transform hover:-translate-y-1"
+              className="p-6 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl"
             >
               <h3 className="text-xl font-semibold text-pink-600 mb-1">{exp.title}</h3>
               <h4 className="text-md font-medium text-gray-700">{exp.company}</h4>
@@ -132,7 +132,7 @@ export default function Home() {
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:bg-pink-50 transition transform hover:-translate-y-1"
+              className="block p-6 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl"
             >
               <h3 className="text-xl font-semibold text-pink-600 mb-2">
                 {project.title}
@@ -161,7 +161,7 @@ export default function Home() {
           <div className="p-4 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-bold text-pink-600">Skills</h2>
             <p className="text-gray-700">
-            👩🏻‍💻 Programming: Java, C/C++, Python, Racket, SQL <br />
+            👩🏻‍💻 Programming: Java, C/C++, Python, SQL <br />
             🛠️ Tools/Environments: Figma, IntelliJ, VSCode, Github <br />
             🧪 Testing: JUnit, GDB <br />
             🖥️ Web: React, HTML, CSS, JavaScript, TypeScript, Node.js, Next.js, JSON
