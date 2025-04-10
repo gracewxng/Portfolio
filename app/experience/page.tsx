@@ -11,7 +11,7 @@ const experiences = [
     description: "🌱 The tiny home project is kinda cool",
   },
   {
-    title: "Software Engineer",
+    title: "Software Developer",
     company: "Ascend UBC",
     date: "Dec 2024 - Present",
     description: "💻 Check out our website!",

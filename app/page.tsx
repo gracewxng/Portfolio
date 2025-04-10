@@ -84,7 +84,7 @@ export default function Home() {
               description: "🌱 Built a full-stack sensor data platform with a responsive TypeScript/Next.js front-end and real-time data processing on a Raspberry Pi",
             },
             {
-              title: "Software Engineer",
+              title: "Software Developer",
               company: "Ascend UBC",
               date: "Dec 2024 – Present",
               description: "💻 Developed a sleek React/Next.js site to centralize event logistics, cutting load times with clean code and backend optimizations",
