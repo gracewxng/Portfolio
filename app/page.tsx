@@ -151,6 +151,14 @@ export default function Home() {
             </a>
           ))}
         </div>
+        <div className="mt-8 text-center">
+          <Link
+            href="/projects"
+            className="inline-block px-6 py-2 text-sm font-medium text-pink-600 bg-white rounded-lg shadow-md hover:bg-pink-500 hover:text-white transition duration-300"
+          >
+            See More Projects →
+          </Link>
+        </div>
       </div>
 
       {/* Dashboard Section Below Content */}
