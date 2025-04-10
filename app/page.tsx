@@ -39,18 +39,14 @@ export default function Home() {
           <p className="text-lg md:text-xl text-pink-600 mt-2">Business + Computer Science @ UBC</p>
 
           {/* About Me Blurb */}
-          <p className="mt-4 text-lg md:text-l text-gray-600">
+          <p className="mt-3 text-lg md:text-l text-gray-600">
             Hi! My name is Grace and I am a second-year Business and Computer Science student at UBC.
             I'm passionate about software engineering, education, healthcare, and building
             meaningful projects that make an impact. I love exploring new technologies and
             combining business knowledge with technical expertise to solve real-world problems.
             <br />
             <br />
-            Outside of school, you can find me in the dance studio, at a cute cafe drinking matcha, editing a video, or
-            just hanging out with friends and family.
-            <br />
-            <br />
-            Learn more about me and my projects with the Grace's AI in the bottom right corner!
+            Chat with me using the message icon in the bottom right corner!
           </p>
 
           {/* Get in Touch Button */}
@@ -76,8 +72,90 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Experience Highlights Section */}
+      <div className="mt-12 w-full px-6 max-w-5xl">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">Experience Highlights</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Software Engineer",
+              company: "Sustaingineering UBC",
+              date: "Jan 2025 – Present",
+              description: "🌱 Built a full-stack sensor data platform with a responsive TypeScript/Next.js front-end and real-time data processing on a Raspberry Pi",
+            },
+            {
+              title: "Software Engineer",
+              company: "Ascend UBC",
+              date: "Dec 2024 – Present",
+              description: "💻 Developed a sleek React/Next.js site to centralize event logistics, cutting load times with clean code and backend optimizations",
+            },
+          ].map((exp, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:bg-pink-50 transition transform hover:-translate-y-1"
+            >
+              <h3 className="text-xl font-semibold text-pink-600 mb-1">{exp.title}</h3>
+              <h4 className="text-md font-medium text-gray-700">{exp.company}</h4>
+              <p className="text-sm text-gray-500 italic">{exp.date}</p>
+              <p className="mt-2 text-gray-700">{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Projects Section */}
+      <div className="mt-12 w-full px-6 max-w-5xl">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+              {
+                title: "Portfolio",
+                description: "Next.js, Tailwind CSS, Upstash, OpenAI API<br /><br />Designed and developed a personal portfolio website to showcase skills and projects.",
+                href: "https://gracewang.vercel.app/",
+                date: new Date().toISOString(),
+              },
+              {
+                title: "PupTalk",
+                description: "OpenAI API, JavaScript, HTML, CSS<br /><br />Built a Chrome extension that transforms webpage text into different tones in real-time to improve accessibility and engagement.",
+                href: "https://github.com/marinajnyu/bucs-hackathon-2025",
+                date: "2025-02-10",
+              },
+              {
+                title: "FitSphere",
+                description: "React, JavaScript, HTML, CSS<br /><br />Created a beginner-friendly fitness site featuring interactive muscle diagrams and custom tutorials to guide users.",
+                href: "https://github.com/gracewxng/FitSphere",
+                date: "2024-03-23",
+              },
+          ].map((project) => (
+            <a
+              key={project.title}
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-6 bg-white rounded-lg shadow-md hover:shadow-xl hover:bg-pink-50 transition transform hover:-translate-y-1"
+            >
+              <h3 className="text-xl font-semibold text-pink-600 mb-2">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-500 mb-2">
+                {project.description.split('<br /><br />')[0]}
+              </p>
+              <p className="text-sm text-gray-700">
+                {project.description.split('<br /><br />')[1]}
+              </p>
+              <p className="mt-2 text-xs text-gray-400">
+                {Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
+                  new Date(project.date)
+                )}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+
       {/* Dashboard Section Below Content */}
-      <div className="w-full bg-white bg-opacity-50 backdrop-blur-lg py-6 mt-16">
+      <div className="w-full bg-transparent py-6 mt-12">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">More About Me</h2>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 text-center">
           {/* Technical Skills */}
           <div className="p-4 bg-white rounded-lg shadow-md transform transition duration-500 hover:scale-105 hover:shadow-xl">

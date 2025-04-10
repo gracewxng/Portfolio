@@ -36,8 +36,8 @@ const personalProjects = [
   {
     slug: "portfolio",
     title: "Portfolio",
-    description: "TypeScript | Next.js | Tailwind CSS | Upstash",
-    date: "2024-09-17",
+    description: "TypeScript | Next.js | Tailwind CSS | Upstash | OpenAI API",
+    date: new Date().toISOString(),
     href: "https://gracewang.vercel.app/",
   },
 ];
