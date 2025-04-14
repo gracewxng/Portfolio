@@ -2,19 +2,20 @@
 
 ## Overview
 
-This is a website I developed using **Next.js, Tailwind CSS, and Upstash** to showcase my skills, projects, and contact methods. Check it out to find out more about me and my technical skills!
+This is a personal portfolio  website I developed using **Next.js, Tailwind CSS, and Upstash** to showcase my skills, projects, and contact methods. Check it out to find out more about me and my technical skills!
 
 ### Home Page
-![Homepage](public/homepage.png)
+![Homepage1](public/homepage1.png)
+![Homepage2](public/homepage2.png)
 
 ### About Page
 ![Homepage](public/aboutpage.png)
 
-### Exxperiences Page
-![Homepage](public/experiencepage.png)
+### Experiences Page
+![Experiences](public/experiences.png)
 
 ### Project Page
-![Projects](public/projectpage.png)
+![Projects](public/projects.png)
 
 ### Contact Page
-![Contact](public/contactspage.png)
+![Contact](public/contact.png)
