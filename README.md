@@ -7,6 +7,7 @@ Welcome to my portfolio website — a place where I combine design, functionalit
 ## 🖥️ Overview
 
 This portfolio was built with modern web technologies like **Next.js, Tailwind CSS, Upstash, and the OpenAI API.** It’s a showcase of:
+
 	•	My background and experiences
 	•	Technical projects
 	•	A custom-built AI chatbot
@@ -40,6 +41,7 @@ Whether you’re a recruiter, collaborator, or just curious — take a scroll!
 ![Contact](public/contact.png)
 
 ### Future Improvements
+
 	•	Add light/dark mode toggle
 	•	Expand blog functionality
 	•	Add analytics dashboard
