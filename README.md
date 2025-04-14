@@ -1,10 +1,27 @@
-# Portfolio 🎀
+# 🎀 My Portfolio
 
-## Overview
+Welcome to my portfolio website — a place where I combine design, functionality, and a touch of AI to share who I am and what I build.
 
-This is a personal portfolio  website I developed using **Next.js, Tailwind CSS, Upstash, and OpenAI API** to showcase my skills, projects, and contact methods. Check it out to find out more about me and my technical skills!
+🔗 Live Demo: https://gracewang.vercel.app/
 
-https://gracewang.vercel.app/
+## 🖥️ Overview
+
+This portfolio was built with modern web technologies like **Next.js, Tailwind CSS, Upstash, and the OpenAI API.** It’s a showcase of:
+	•	My background and experiences
+	•	Technical projects
+	•	A custom-built AI chatbot
+	•	Ways to connect with me
+
+Whether you’re a recruiter, collaborator, or just curious — take a scroll!
+
+### 🛠️ Tech Stack
+
+	•	Framework: Next.js (App Router)
+	•	Styling: Tailwind CSS
+	•	Database: Upstash Redis
+	•	AI Integration: OpenAI API
+	•	Hosting: Vercel
+	•	Icons: Lucide
 
 ### Home Page
 ![Homepage1](public/homepage1.png)
@@ -21,3 +38,8 @@ https://gracewang.vercel.app/
 
 ### Contact Page
 ![Contact](public/contact.png)
+
+### Future Improvements
+	•	Add light/dark mode toggle
+	•	Expand blog functionality
+	•	Add analytics dashboard
