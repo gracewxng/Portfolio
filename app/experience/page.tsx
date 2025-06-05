@@ -10,7 +10,7 @@ import { ArrowLeft } from "lucide-react";
 // Import your Navigation bar component
 import { Navigation } from "../components/nav";
 
-// Array of work experience objects to be rendered as a timeline
+// Array of work experience objects to be rendered as timeline
 const experiences = [
     {
     title: "Software Engineer intern",
