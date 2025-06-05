@@ -1,16 +1,22 @@
+// Mark this as a Client Component so it can use state, effects, and browser APIs
 "use client";
 
+// Import React core features and hooks
 import React, { useRef, useEffect, useState } from "react";
+
+// Import custom hook to track mouse position
 import { useMousePosition } from "@/util/mouse";
 
+// Define the prop types for the component
 interface ParticlesProps {
-	className?: string;
-	quantity?: number;
-	staticity?: number;
-	ease?: number;
-	refresh?: boolean;
+	className?: string; // Optional className for styling
+	quantity?: number;  // Number of particles to render
+	staticity?: number; // Controls how strongly particles follow the mouse
+	ease?: number;      // Controls the easing/smoothness of movement
+	refresh?: boolean;  // Used to re-render the canvas externally
 }
 
+// Main Particles component definition
 export default function Particles({
 	className = "",
 	quantity = 30,
@@ -18,48 +24,72 @@ export default function Particles({
 	ease = 50,
 	refresh = false,
 }: ParticlesProps) {
+	// Reference to the canvas element
 	const canvasRef = useRef<HTMLCanvasElement>(null);
+
+	// Reference to the container that holds the canvas
 	const canvasContainerRef = useRef<HTMLDivElement>(null);
+
+	// Reference to the canvas 2D drawing context
 	const context = useRef<CanvasRenderingContext2D | null>(null);
+
+	// Array that stores all particle circle objects
 	const circles = useRef<any[]>([]);
+
+	// Get current mouse position using a custom hook
 	const mousePosition = useMousePosition();
+
+	// Track the mouse position relative to the canvas
 	const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+	// Store the canvas width and height
 	const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+
+	// Detect device pixel ratio (for high-DPI rendering)
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
+	// Initialize canvas context and start animation on mount
 	useEffect(() => {
 		if (canvasRef.current) {
 			context.current = canvasRef.current.getContext("2d");
 		}
-		initCanvas();
-		animate();
-		window.addEventListener("resize", initCanvas);
+		initCanvas(); // Setup canvas size and draw particles
+		animate();    // Start animation loop
+		window.addEventListener("resize", initCanvas); // Reinit on resize
 
 		return () => {
-			window.removeEventListener("resize", initCanvas);
+			window.removeEventListener("resize", initCanvas); // Cleanup
 		};
 	}, []);
 
+	// Update particle behavior when mouse moves
 	useEffect(() => {
 		onMouseMove();
 	}, [mousePosition.x, mousePosition.y]);
 
+	// Redraw particles if the `refresh` prop changes
 	useEffect(() => {
 		initCanvas();
 	}, [refresh]);
 
+	// Initialize the canvas: size and particles
 	const initCanvas = () => {
-		resizeCanvas();
-		drawParticles();
+		resizeCanvas();   // Match canvas to container size
+		drawParticles();  // Draw initial set of particles
 	};
 
+	// Update mouse position relative to canvas
 	const onMouseMove = () => {
 		if (canvasRef.current) {
 			const rect = canvasRef.current.getBoundingClientRect();
 			const { w, h } = canvasSize.current;
 			const x = mousePosition.x - rect.left - w / 2;
 			const y = mousePosition.y - rect.top - h / 2;
+
+			// Check if mouse is inside canvas bounds
 			const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
+
+			// If so, update mouse position
 			if (inside) {
 				mouse.current.x = x;
 				mouse.current.y = y;
@@ -67,6 +97,7 @@ export default function Particles({
 		}
 	};
 
+	// Define the shape and behavior of a particle
 	type Circle = {
 		x: number;
 		y: number;
@@ -80,26 +111,28 @@ export default function Particles({
 		magnetism: number;
 	};
 
+	// Resize canvas and scale it for high DPI displays
 	const resizeCanvas = () => {
 		if (canvasContainerRef.current && canvasRef.current && context.current) {
-			circles.current.length = 0;
+			circles.current.length = 0; // Clear existing particles
 			canvasSize.current.w = canvasContainerRef.current.offsetWidth;
 			canvasSize.current.h = canvasContainerRef.current.offsetHeight;
+
 			canvasRef.current.width = canvasSize.current.w * dpr;
 			canvasRef.current.height = canvasSize.current.h * dpr;
+
 			canvasRef.current.style.width = `${canvasSize.current.w}px`;
 			canvasRef.current.style.height = `${canvasSize.current.h}px`;
-			context.current.scale(dpr, dpr);
+
+			context.current.scale(dpr, dpr); // Scale for high-DPI
 		}
 	};
 
+	// Generate a single particle with randomized properties
 	const circleParams = (): Circle => {
 		const x = Math.floor(Math.random() * canvasSize.current.w);
 		const y = Math.floor(Math.random() * canvasSize.current.h);
-		const translateX = 0;
-		const translateY = 0;
 		const size = Math.floor(Math.random() * 2) + 0.1;
-		const alpha = 0;
 		const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
 		const dx = (Math.random() - 0.5) * 0.2;
 		const dy = (Math.random() - 0.5) * 0.2;
@@ -107,10 +140,10 @@ export default function Particles({
 		return {
 			x,
 			y,
-			translateX,
-			translateY,
+			translateX: 0,
+			translateY: 0,
 			size,
-			alpha,
+			alpha: 0,
 			targetAlpha,
 			dx,
 			dy,
@@ -118,22 +151,25 @@ export default function Particles({
 		};
 	};
 
+	// Draw a particle circle on the canvas
 	const drawCircle = (circle: Circle, update = false) => {
 		if (context.current) {
 			const { x, y, translateX, translateY, size, alpha } = circle;
+
 			context.current.translate(translateX, translateY);
 			context.current.beginPath();
 			context.current.arc(x, y, size, 0, 2 * Math.PI);
 			context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
 			context.current.fill();
-			context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
+			context.current.setTransform(dpr, 0, 0, dpr, 0, 0); // Reset transform
 
 			if (!update) {
-				circles.current.push(circle);
+				circles.current.push(circle); // Save circle if it's not an update
 			}
 		}
 	};
 
+	// Clear the entire canvas
 	const clearContext = () => {
 		if (context.current) {
 			context.current.clearRect(
@@ -145,15 +181,16 @@ export default function Particles({
 		}
 	};
 
+	// Draw all particles initially
 	const drawParticles = () => {
 		clearContext();
-		const particleCount = quantity;
-		for (let i = 0; i < particleCount; i++) {
+		for (let i = 0; i < quantity; i++) {
 			const circle = circleParams();
 			drawCircle(circle);
 		}
 	};
 
+	// Remap a value from one range to another (for alpha blending near edges)
 	const remapValue = (
 		value: number,
 		start1: number,
@@ -166,20 +203,27 @@ export default function Particles({
 		return remapped > 0 ? remapped : 0;
 	};
 
+	// Main animation loop — updates particle positions and redraws them
 	const animate = () => {
-		clearContext();
+		clearContext(); // Clear canvas each frame
+
+		// Update and redraw every circle
 		circles.current.forEach((circle: Circle, i: number) => {
-			// Handle the alpha value
+			// Calculate how close the circle is to the canvas edge
 			const edge = [
-				circle.x + circle.translateX - circle.size, // distance from left edge
-				canvasSize.current.w - circle.x - circle.translateX - circle.size, // distance from right edge
-				circle.y + circle.translateY - circle.size, // distance from top edge
-				canvasSize.current.h - circle.y - circle.translateY - circle.size, // distance from bottom edge
+				circle.x + circle.translateX - circle.size,
+				canvasSize.current.w - circle.x - circle.translateX - circle.size,
+				circle.y + circle.translateY - circle.size,
+				canvasSize.current.h - circle.y - circle.translateY - circle.size,
 			];
 			const closestEdge = edge.reduce((a, b) => Math.min(a, b));
+
+			// Remap that proximity to control alpha
 			const remapClosestEdge = parseFloat(
 				remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
 			);
+
+			// Fade-in/out based on proximity to edge
 			if (remapClosestEdge > 1) {
 				circle.alpha += 0.02;
 				if (circle.alpha > circle.targetAlpha) {
@@ -188,44 +232,40 @@ export default function Particles({
 			} else {
 				circle.alpha = circle.targetAlpha * remapClosestEdge;
 			}
+
+			// Update circle's position
 			circle.x += circle.dx;
 			circle.y += circle.dy;
+
+			// Update how it follows the mouse
 			circle.translateX +=
 				(mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
 				ease;
 			circle.translateY +=
 				(mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
 				ease;
-			// circle gets out of the canvas
+
+			// If circle goes out of bounds, replace it
 			if (
 				circle.x < -circle.size ||
 				circle.x > canvasSize.current.w + circle.size ||
 				circle.y < -circle.size ||
 				circle.y > canvasSize.current.h + circle.size
 			) {
-				// remove the circle from the array
-				circles.current.splice(i, 1);
-				// create a new circle
-				const newCircle = circleParams();
-				drawCircle(newCircle);
-				// update the circle position
+				circles.current.splice(i, 1);        // Remove old circle
+				const newCircle = circleParams();    // Create new one
+				drawCircle(newCircle);              // Draw it
 			} else {
-				drawCircle(
-					{
-						...circle,
-						x: circle.x,
-						y: circle.y,
-						translateX: circle.translateX,
-						translateY: circle.translateY,
-						alpha: circle.alpha,
-					},
-					true,
-				);
+				// Otherwise, just redraw it with updates
+				drawCircle({ ...circle }, true);
 			}
 		});
+
+		// Request next animation frame
 		window.requestAnimationFrame(animate);
 	};
 
+	// Render the canvas inside a container div
 	return (
 		<div className={className} ref={canvasContainerRef} aria-hidden="true">
 			<canvas ref={canvasRef} />

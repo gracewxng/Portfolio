@@ -1,32 +1,49 @@
+/* Target the <code> block inside a rehype-pretty-code fragment */
 [data-rehype-pretty-code-fragment] code {
-    @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
-    counter-reset: line;
-    box-decoration-break: clone;
-  }
-  [data-rehype-pretty-code-fragment] .line {
-    @apply px-4 py-1;
-  }
-  [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    width: 1rem;
-    margin-right: 1rem;
-    text-align: right;
-    color: gray;
-  }
-  [data-rehype-pretty-code-fragment] .line--highlighted {
-    @apply bg-zinc-300 bg-opacity-10;
-  }
-  [data-rehype-pretty-code-fragment] .line-highlighted span {
-    @apply relative;
-  }
-  [data-rehype-pretty-code-fragment] .word--highlighted {
-    @apply rounded-md bg-zinc-300 bg-opacity-10 p-1;
-  }
-  [data-rehype-pretty-code-title] {
-    @apply mt-4 py-2 px-4 text-sm font-medium;
-  }
-  [data-rehype-pretty-code-title] + pre {
-    @apply mt-0;
-  }
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
+  /* Reset line numbering counter */
+  counter-reset: line;
+  /* Ensures border/background styling is preserved across wrapped lines */
+  box-decoration-break: clone;
+}
+
+/* Style for each individual code line */
+[data-rehype-pretty-code-fragment] .line {
+  @apply px-4 py-1; /* Padding for code lines */
+}
+
+/* Apply line numbers to each line if the container has [data-line-numbers] */
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  counter-increment: line; /* Increase line number for each line */
+  content: counter(line);  /* Display the current line number */
+  display: inline-block;
+  width: 1rem;              /* Fixed width to align nicely */
+  margin-right: 1rem;       /* Space between line number and code */
+  text-align: right;
+  color: gray;              /* Line number color */
+}
+
+/* Style for highlighted lines (e.g. via triple backtick annotations like `highlight=1`) */
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-zinc-300 bg-opacity-10; /* Light background for emphasis */
+}
+
+/* Style for highlighted spans within a line */
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative; /* Required for custom highlighting effects */
+}
+
+/* Style for highlighted words (e.g. using word highlighting plugin) */
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply rounded-md bg-zinc-300 bg-opacity-10 p-1; /* Bubble-style highlight */
+}
+
+/* Style for custom code titles (e.g. above fenced code blocks) */
+[data-rehype-pretty-code-title] {
+  @apply mt-4 py-2 px-4 text-sm font-medium; /* Looks like a file label */
+}
+
+/* Remove top margin from code block when preceded by a code title */
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-0;
+}

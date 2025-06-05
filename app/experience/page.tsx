@@ -1,9 +1,23 @@
+// Import Link for client-side navigation
 import Link from "next/link";
+
+// Import React for JSX
 import React from "react";
+
+// Import back arrow icon from Lucide
 import { ArrowLeft } from "lucide-react";
+
+// Import your Navigation bar component
 import { Navigation } from "../components/nav";
 
+// Array of work experience objects to be rendered as a timeline
 const experiences = [
+    {
+    title: "Software Engineer intern",
+    company: "Craeftig App Inc.",
+    date: "May 2025 - Present",
+    description: "🧾 Invoicing made simple",
+  },
   {
     title: "Software Engineer",
     company: "Sustaingineering UBC",
@@ -42,34 +56,38 @@ const experiences = [
   },
 ];
 
+// Functional component to render the experience timeline
 export default function Experiences() {
   return (
+    // Page wrapper with gradient background and centered layout
     <div className="min-h-screen bg-gradient-to-tl from-pink-100 via-pink-200 to-pink-300 flex flex-col items-center text-gray-800 relative pb-20">     
-      {/* Navigation Bar */}
+
+      {/* Navigation bar displayed at the top-right corner */}
       <Navigation />
 
-      {/* Back Button */}
+      {/* Back button that links to the homepage */}
       <Link href="/" className="absolute top-8 left-8 text-gray-600 hover:text-pink-600 transition">
         <ArrowLeft className="w-6 h-6" />
       </Link>
 
-      {/* Page Header */}
+      {/* Page title and subheading */}
       <div className="text-center max-w-lg mt-16">
         <h1 className="text-l sm:text-6xl md:text-l font-bold text-white">My Experiences</h1>
         <p className="text-lg md:text-xl text-pink-600 mt-2">A quick timeline!</p>
       </div>
 
-      {/* Timeline */}
+      {/* Timeline container with spacing between each item */}
       <div className="mt-10 space-y-8 w-full max-w-3xl">
+        {/* Loop through each experience and render it as a timeline entry */}
         {experiences.map((exp, index) => (
           <div
             key={index}
             className="relative pl-8 border-l-4 border-pink-600 transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg hover:bg-white/40 rounded-md group"
           >
-            {/* Timeline Marker */}
+            {/* Pulsing dot to mark position on timeline */}
             <div className="absolute left-[-10px] w-4 h-4 bg-pink-600 rounded-full animate-pulse" />
 
-            {/* Experience Details */}
+            {/* Experience details */}
             <div className="ml-4 transition-opacity duration-300 group-hover:opacity-100">
               <h2 className="text-xl font-semibold text-gray-800">{exp.title}</h2>
               <h3 className="text-md font-medium text-gray-500">{exp.company}</h3>

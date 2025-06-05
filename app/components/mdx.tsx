@@ -1,13 +1,25 @@
+// Disable TypeScript checking for this file (likely due to loose or inferred types)
+// Consider removing this and adding explicit types later
 // @ts-nocheck
+
+// Import core React functionality
 import * as React from "react";
+
+// Import Next.js optimized image and link components
 import Image from "next/image";
 import Link from "next/link";
+
+// Import the Contentlayer hook to compile and render MDX content
 import { useMDXComponent } from "next-contentlayer/hooks";
 
+// Utility function to join class names, ignoring falsy values (e.g., null, undefined)
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
 }
+
+// Define custom renderers for MDX elements (e.g., h1, p, code, etc.)
 const components = {
+	// Custom <h1> with Tailwind styles
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(
@@ -17,6 +29,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <h2>
 	h2: ({ className, ...props }) => (
 		<h2
 			className={clsx(
@@ -26,6 +40,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <h3>
 	h3: ({ className, ...props }) => (
 		<h3
 			className={clsx(
@@ -35,6 +51,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <h4>
 	h4: ({ className, ...props }) => (
 		<h4
 			className={clsx(
@@ -44,6 +62,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <h5>
 	h5: ({ className, ...props }) => (
 		<h5
 			className={clsx(
@@ -53,6 +73,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <h6>
 	h6: ({ className, ...props }) => (
 		<h6
 			className={clsx(
@@ -62,6 +84,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <a> using Next.js <Link> with Tailwind styling
 	a: ({ className, ...props }) => (
 		<Link
 			className={clsx(
@@ -71,21 +95,31 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <p>
 	p: ({ className, ...props }) => (
 		<p
 			className={clsx("leading-7 [&:not(:first-child)]:mt-6", className)}
 			{...props}
 		/>
 	),
+
+	// Custom unordered list
 	ul: ({ className, ...props }) => (
 		<ul className={clsx("my-6 ml-6 list-disc", className)} {...props} />
 	),
+
+	// Custom ordered list
 	ol: ({ className, ...props }) => (
 		<ol className={clsx("my-6 ml-6 list-decimal", className)} {...props} />
 	),
+
+	// Custom list item
 	li: ({ className, ...props }) => (
 		<li className={clsx("mt-2", className)} {...props} />
 	),
+
+	// Custom <blockquote>
 	blockquote: ({ className, ...props }) => (
 		<blockquote
 			className={clsx(
@@ -95,11 +129,14 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <img>, allowing all native props
 	img: ({
 		className,
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
+		// Using <img> instead of <Image> due to MDX limitations
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
 			className={clsx("rounded-md border border-zinc-200", className)}
@@ -107,14 +144,20 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom horizontal rule
 	hr: ({ ...props }) => (
 		<hr className="my-4 border-zinc-200 md:my-8" {...props} />
 	),
+
+	// Wrapper for scrollable table
 	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
 		<div className="w-full my-6 overflow-y-auto">
 			<table className={clsx("w-full", className)} {...props} />
 		</div>
 	),
+
+	// Custom <tr>
 	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
 		<tr
 			className={clsx(
@@ -124,6 +167,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <th>
 	th: ({ className, ...props }) => (
 		<th
 			className={clsx(
@@ -133,6 +178,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <td>
 	td: ({ className, ...props }) => (
 		<td
 			className={clsx(
@@ -142,6 +189,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom <pre> block (for code blocks)
 	pre: ({ className, ...props }) => (
 		<pre
 			className={clsx(
@@ -151,6 +200,8 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Custom inline <code> styling
 	code: ({ className, ...props }) => (
 		<code
 			className={clsx(
@@ -160,17 +211,27 @@ const components = {
 			{...props}
 		/>
 	),
+
+	// Allow Next.js <Image> usage in MDX (for advanced cases)
 	Image,
 };
 
+///////////////////////////////////////
+// Renders compiled MDX into React JSX
+///////////////////////////////////////
+
+// Define props for the Mdx component — expects a compiled code string
 interface MdxProps {
 	code: string;
 }
 
+// The actual MDX rendering component
 export function Mdx({ code }: MdxProps) {
+	// Compile MDX string into a usable React component
 	const Component = useMDXComponent(code);
 
 	return (
+		// Render compiled MDX with custom component overrides
 		<div className="mdx">
 			<Component components={components} />
 		</div>
