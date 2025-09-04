@@ -15,7 +15,7 @@ const experiences = [
     {
     title: "Software Engineer intern",
     company: "Craeftig App Inc.",
-    date: "May 2025 - Present",
+    date: "May 2025 - Aug 2025",
     description: "🧾 Invoicing made simple",
   },
   {
