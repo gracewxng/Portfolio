@@ -55,7 +55,7 @@ export default function Home() {
 
           {/* About Me paragraph */}
           <p className="mt-3 text-lg md:text-l text-gray-600">
-            Hi! My name is Grace and I am an incoming third-year Business and Computer Science student at UBC.
+            Hi! My name is Grace and I am a third-year Business and Computer Science student at UBC.
             I'm passionate about software engineering, education, healthcare, and building meaningful projects 
             that make an impact. I love exploring new technologies 
             and combining business knowledge with technical expertise to solve real-world problems.
