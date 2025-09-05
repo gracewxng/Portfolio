@@ -94,7 +94,7 @@ export default function Home() {
             {
               title: "Software Engineer Intern",
               company: "Craeftig App Inc.",
-              date: "May 2025 – Present",
+              date: "May 2025 – Aug 2025",
               description: "💻 Improved performance and reliability of a cross-platform mobile app by diagnosing bugs, implementing UI features, and automating deployments with CI/CD and AWS, reducing release times by 30%.",
             },
             {
